@@ -51,6 +51,9 @@ html{
 .font-montserrat{
     font-family: "Montserrat", sans-serif;
 }
+.font-roboto{
+    font-family: "Roboto", sans-serif;
+}
 
 
 
@@ -77,7 +80,9 @@ html{
 .bg-pink-500{
     background: #C60177;
 }
-
+.bg-gray-100{
+    background: #fbfbfb;
+}
 .btn-outline-pink{
     border-color: #C60177;
     color: #C60177; 
@@ -106,35 +111,149 @@ html{
     font-size: 1rem;
 }
 
+.card-datas{
+    height: 7.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card-datas .header-card{
+    background: #05C7F2;
+    width: 100%;
+    height: 2.375rem;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px 16px;
+    display: flex;
+    gap: 1.5rem;
+}
+.card-datas .body-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
+    gap: 12px;
+}
+.card-datas .header-card span i{
+    font-size: 1.5rem;
+}
+.card-option span i{
+    font-size: 2.5rem;
+}
+.title-top-box{
+    top: -0.8rem;
+    left: 1rem;
+    background: #fff;
+}
+
+
+input[type = radio]{
+    display: none;
+}
+input[type = radio]:checked + label {
+    background: #f8f8f8;
+    border: 2px solid #07F9A0;
+    box-shadow: 0px 0px 0px 4px rgb(7 249 160 / 20%), inset 2px 2px 0px 0px rgb(0 0 0 / 20%)
+}
+input[type = radio]:checked + label > span i {
+    color: #05C7F2;
+}
+.card-option{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+
+    width: 100%;
+    height: 8rem;
+
+    background: #fbfbfb;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: .4s;
+
+    cursor: pointer;
+    user-select: none;
+}
+.card-option:hover{
+    border-color: #05C7F2;
+}
+.card-option span{
+    width: 42px;
+    height: 42px;
+}
+
+
+
 .h--50{
     height: 12.5rem;
+}
+.h--35{
+    height: 8.75rem;
 }
 .p-none{
     padding: 0;
 }
-.gap-8{
-    row-gap: 1rem;
-    column-gap: 1rem;
+.gap-16{
+    row-gap: 4rem;
+    column-gap: 4rem;
 }
+
 
 .img-full{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
+
+.p-6{
+    padding: 1.5rem;
+}
 /* .mx-w-350{
     max-width: 87.5rem;
 } */
 
-/* @media (min-width: 576px) {
-    .sm-align-items-stretch{
-        align-items: stretch !important;
+.colunas{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+}
+@media (min-width: 576px) {
+    .gap-sm-2{
+        gap: .5rem;
     }
-} */
+    .gap-sm-8{
+        row-gap: 1rem;
+        column-gap: 1rem;
+    }
+    .gap-sm-0{
+        gap: 0;
+    }
+    .gap-row-sm-2{
+        row-gap: .5rem;
+    }
+}
 @media (min-width: 768px){
     .h-md-50{
         height: 12.5rem;
     }
+    /* .gap-md-2{
+        gap: .5rem;
+    }  */
+    .colunas{
+        gap: 1rem;
+    }
 }
-@media (min-width: 992px) { 
+@media (min-width: 992px) {
+    .colunas{
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr);
+    }
  }
