@@ -45,3 +45,34 @@ function addCanvas(id, year){
     `)
     openChart(id)
 }
+
+
+
+// start slide eventos
+const btnR = document.querySelector(".btnRight")
+let index = 0
+const btns = [...document.querySelectorAll('.btn-nav')]
+const slide = document.querySelectorAll('.slide')
+btns.forEach((e) => {
+    e.addEventListener("click", () => {
+        const r = e.classList.contains('btnRight')
+        if (r) {
+            index += 1
+        }
+        else {
+            index -= 1
+        }
+        if (index >= (slide.length)) {
+            index = 0
+        }
+
+        if (index < 0) {
+            index = slide.length - 1
+        }
+        slide[index].scrollIntoView({
+            inline: "center",
+            block: "center"
+        })
+    })
+})
+//end slide eventos

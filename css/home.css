@@ -1,0 +1,114 @@
+.main-banner {
+	background: url("../assets/img/praia-grande.png");
+	background-repeat: no-repeat;
+  min-height: 600px;
+	height: 90vh;
+	background-size: cover;
+  background-attachment: fixed;
+}
+
+.main-title{
+  color: #fff;
+  font-size: 6.25rem;
+  font-weight: bold;
+  font-family: "Inter", sans-serif;
+  white-space: nowrap;
+}
+
+.pesquisa {
+  text-align: right;
+  height: 8%;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.inputPesquisa {
+  width: 50%;
+  height: 100%;
+  background: #ffffff;
+  border-color: #07F9A0 ;
+  color: #000000;
+  border-radius: 8px 8px 8px 8px;
+  padding-left: 16px;
+}
+
+.botBuscar {
+  background: #07F9A0;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding-left: 16px;
+  padding-right: 16px;
+  height: 100%;
+}
+
+.linha{
+	background: linear-gradient(90deg, #449BAE 0%, #05C7F2 23.72%, rgba(5, 199, 242, 0) 86.26%);
+	height: 70px;
+	width: 100%
+}
+
+.card{
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.numero-visitados {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #07F9A0;
+  border-radius: 60px;
+  top: 16px;
+  left: 16px;
+}
+
+.card-body{
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  bottom: 0;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+  border-radius: .5rem;
+}
+
+.img-visitados {
+	height: 296px;
+}
+
+.data3 {
+  display: flex;
+  padding: 4px 24px;
+  gap: 10px;
+  position: absolute;
+  width: 115px;
+  height: 22px;
+  left: 21px;
+  top: 205px;
+  background: #07F9A0;
+  border-radius: 10px;
+}
+.title-line::after {
+    content: "";
+    width: 10%;
+    background-color: #05C7F2;
+    height: 1px;
+    display: block;
+    margin-left: 1rem;
+}
+.title-line::before {
+    content: "";
+    width: 10%;
+    background-color: #05C7F2;
+    height: 1px;
+    display: block;
+    margin-right: 1rem;
+}

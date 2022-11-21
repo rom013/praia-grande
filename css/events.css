@@ -1,0 +1,43 @@
+.banner{
+    background: #252525;
+    min-height: 650px;
+    height: 80vh;
+
+}
+.banner-event{
+    height: 450px;
+}
+
+#natal{
+    background: radial-gradient(50% 50% at 50% 50%, #AD4625 0%, #8E0000 100%);
+    background-image: url(../assets/img/background_coca.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#game{
+    background: radial-gradient(67.6% 50% at 50% 50%, #C201C6 0%, #7733AC 100%);
+    background-image: url(../assets/img/event_praia_games.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#game .h2{
+    font-family: "Fira code", sans-serif;
+    font-weight: 800;
+}
+
+.btn-game{
+    background-color: #5ACC00;
+    width: 70%;
+    min-width: 250px;
+    border-radius: 0;
+    box-shadow: 3px 3px 0px #3c8b00;
+}
+.btn-game:active{
+    background-color: #49a800;
+}
+
+.btn-outline-pink{
+    border-color: #C60177;
+    color: #C60177; 
+    font-weight: 500;
+}

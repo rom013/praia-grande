@@ -1,0 +1,62 @@
+.slide-eventos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 406px;
+}
+
+.btn-nav {
+    width: 10%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: .4s linear;
+}
+.btn-nav:hover{
+  background: rgba(0, 0, 0, 0.1);
+}
+.slide-container {
+    overflow: hidden;
+    width: 80%;
+    height: 100%;
+    position: relative;
+}
+
+.scroll-slide {
+    overflow-y: hidden;
+    overflow-x: scroll;
+    gap: 20px;
+    display: flex;
+    height: 100%;
+}
+
+.slide {
+    height: 400px;
+    min-width: 340px;
+    position: relative;
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.slide img {
+    min-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+.titulo-card {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.18) 0%, rgba(0, 0, 0, 0.7) 51.62%, #000000 95.89%);
+    color: #ffffff;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 800;
+    height: 110px;
+}
+
+
+.scroll-slide::-webkit-scrollbar, .slide-noticias > div::-webkit-scrollbar, .container-criticas::-webkit-scrollbar{
+  display: none;
+}

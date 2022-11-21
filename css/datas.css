@@ -1,0 +1,80 @@
+.card-datas{
+    height: 7.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
+}
+.card-datas .header-card{
+    background: #05C7F2;
+    width: 100%;
+    height: 2.375rem;
+    color: #FFF;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 6px 16px;
+    display: flex;
+    gap: 1.5rem;
+}
+.card-datas .body-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 0px;
+    gap: 12px;
+}
+.card-datas .header-card span i{
+    font-size: 1.5rem;
+}
+
+.card-option span i{
+    font-size: 2.5rem;
+}
+
+.colunas{
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: .5rem;
+}
+
+input[type = radio]{
+    display: none;
+}
+input[type = radio]:checked + label {
+    background: #f8f8f8;
+    border: 2px solid #07F9A0;
+    box-shadow: 0px 0px 0px 4px rgb(7 249 160 / 20%), inset 2px 2px 0px 0px rgb(0 0 0 / 20%)
+}
+input[type = radio]:checked + label > span i {
+    color: #05C7F2;
+}
+
+.card-option{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 16px;
+    gap: 10px;
+
+    width: 100%;
+    height: 8rem;
+
+    background: #fbfbfb;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: .4s;
+
+    cursor: pointer;
+    user-select: none;
+}
+.card-option:hover{
+    border-color: #05C7F2;
+}
+.card-option span{
+    width: 42px;
+    height: 42px;
+}
