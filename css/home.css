@@ -12,7 +12,7 @@
   font-size: 6.25rem;
   font-weight: bold;
   font-family: "Inter", sans-serif;
-  white-space: nowrap;
+/*   white-space: nowrap; */
 }
 
 .pesquisa {
@@ -25,23 +25,38 @@
 }
 
 .inputPesquisa {
-  width: 50%;
-  height: 100%;
   background: #ffffff;
-  border-color: #07F9A0 ;
   color: #000000;
   border-radius: 8px 8px 8px 8px;
-  padding-left: 16px;
+  padding: 8px 12px 8px 32px;
+	border: none;
+	max-width: 658px;
+	width: 100%;
 }
-
+.inputPesquisa:focus{
+	outline: 2px solid #07F9A0;
+}
+.search-container{
+	gap: 1rem;
+	width: 650px;
+	background: rgba(0,0,0,.2);
+	border-radius: .5rem;
+}
 .botBuscar {
-  background: #07F9A0;
+  background: linear-gradient(0deg, #07F9A0 0%, #07F9A0 100%);
   color: #ffffff;
   border: none;
   border-radius: 6px;
-  padding-left: 16px;
-  padding-right: 16px;
-  height: 100%;
+  padding: 8px 16px;
+	font-weight: 800;
+	transition: .4s linear;
+	cursor: pointer;
+}
+.btn-navegation{
+	background: linear-gradient(0deg, #07F9A0 0%, #07F9A0 100%);
+}
+.botBuscar:hover, .btn-navegation:hover{
+	background: linear-gradient(0deg, #05C7F2 -60.36%, #07F9A0 100%);
 }
 
 .linha{
@@ -51,33 +66,59 @@
 }
 
 .card{
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+	box-shadow: 2px 2px 4px rgb(0 0 0 / 25%);
+	border: 0 !important;
+	border-radius: 8px !important;
+	overflow: hidden;
 }
 
 .numero-visitados {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0px;
   position: absolute;
   width: 50px;
   height: 50px;
   background: #07F9A0;
+	background: linear-gradient(0deg, #05C7F2 -60.36%, #07F9A0 100%);
   border-radius: 60px;
-  top: 16px;
-  left: 16px;
+  top: 24px;
+  left: 24px;
 }
 
+.card-visitados{
+	height: 256px;
+	width: 256px;
+	overflow: hidden
+}
+.card-visitados img{
+	width: 100%;
+	height: 100%;
+}
 .card-body{
   position: absolute;
   background: #fff;
   width: 100%;
-  bottom: 0;
+  bottom: 0px;
   text-align: center;
   font-weight: 600;
   color: #000;
   border-radius: .5rem;
+/* 	transition: .4s ease-in-out; */
+}
+/* .card-visitados:hover .card-body{
+	bottom: 0px;
+} */
+.destaque{
+  background: #fff;
+  width: 100%;
+  bottom: 0;
+  padding: 5%;
+  text-align: center;
+  font-weight: 600;
+  color: #000;
+  border-radius: .10rem;
+	position: relative
 }
 
 .img-visitados {
@@ -91,11 +132,20 @@
   position: absolute;
   width: 115px;
   height: 22px;
-  left: 21px;
-  top: 205px;
+  left: 24px;
+top: -11px;
   background: #07F9A0;
   border-radius: 10px;
 }
+
+.tamanho-data{
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 14px;
+	color: #000000;
+	flex: none;
+}
+
 .title-line::after {
     content: "";
     width: 10%;
@@ -111,4 +161,79 @@
     height: 1px;
     display: block;
     margin-right: 1rem;
+}
+
+
+
+.btn-line::after, .btn-line::before{
+  content: "";
+  display: block;
+  width: 35%;
+  height: 1px;
+  background: #05C7F2;
+  position: absolute;
+  pointer-events: none;
+}
+.btn-line::before{
+  right: 0;
+}
+.btn-line::after{
+  left: 0;
+}
+
+@media only screen and (max-width: 900px){
+	.btn-line::after, .btn-line::before{
+		width: 10%;
+	}
+	.main-title{
+	  font-size: 4.25rem;
+	}
+}
+@media only screen and (max-width: 768px){
+	.card-visitados{
+		width: 176px;
+		height: 176px;
+	}
+	.card-visitados img{
+		width: 100%;
+		height: 142px;
+	}
+	.card-body{
+		padding: .5rem !important;
+		font-size: 16px;
+	}
+	.search-container{
+		gap: .5rem;
+		min-width: 288px;
+		width: 100%;
+		margin: 0 32px;
+	}
+}
+@media only screen and (max-width: 576px){
+	.linha{
+		background: #05C7F2;
+		padding-left: 2rem;
+	}
+	.main-title{
+	  font-size: 4.25rem;
+	}
+}
+@media only screen and (max-width: 400px){
+	.grid-cols-1{
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+	}
+	.search-container{
+		gap:0;
+		background: transparent
+	}
+	.inputPesquisa{
+		border-radius: 4px 0px 0px 4px;
+	}
+	.botBuscar{
+		border-radius: 0px 4px 4px 0px;
+	}
+	.main-title{
+	  font-size: 2.5rem;
+	  white-space: break-spaces;
+	}
 }

@@ -78,3 +78,16 @@ input[type = radio]:checked + label > span i {
     width: 42px;
     height: 42px;
 }
+
+.table-blue{
+	background: #c7f5ff;
+}
+.table td, .table th{
+	border: 0;
+}
+.frame-table{
+	padding: 1rem;
+	background: #fafafa;
+	border-radius: 8px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.08);
+}

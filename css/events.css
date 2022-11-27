@@ -1,8 +1,10 @@
+html{
+	scroll-behavior: behavior;
+}
 .banner{
     background: #252525;
     min-height: 650px;
     height: 80vh;
-
 }
 .banner-event{
     height: 450px;
@@ -24,7 +26,12 @@
     font-family: "Fira code", sans-serif;
     font-weight: 800;
 }
-
+#fera{
+    background: radial-gradient(48.02% 50% at 50% 50%, #4E0072 0%, #2D0042 100%);
+    background-image: url(../assets/img/event_fera.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 .btn-game{
     background-color: #5ACC00;
     width: 70%;
@@ -40,4 +47,8 @@
     border-color: #C60177;
     color: #C60177; 
     font-weight: 500;
+}
+.destaque{
+  background: #C201C6;
+  font-size: 1rem;
 }

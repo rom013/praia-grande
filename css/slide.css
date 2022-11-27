@@ -2,7 +2,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 406px;
+    height: 450px;
 }
 
 .btn-nav {
@@ -33,16 +33,19 @@
 }
 
 .slide {
-    height: 400px;
+    min-height: 400px;
+	height: calc(100% - 20px);
     min-width: 340px;
     position: relative;
     box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.25);
+	border-radius: .5rem;
+	overflow: hidden;
 }
 .slide img {
     min-height: 180px;
     width: 100%;
     object-fit: cover;
-    border-radius: 8px;
+    border-radius: 8px 8px 0 0;
 }
 .titulo-card {
     width: 100%;
@@ -59,4 +62,20 @@
 
 .scroll-slide::-webkit-scrollbar, .slide-noticias > div::-webkit-scrollbar, .container-criticas::-webkit-scrollbar{
   display: none;
+}
+
+@media only screen and (max-width: 400px){
+	.slide-eventos{
+		height: 460px;
+	}
+	.btn-nav{
+		display: none;
+	}
+	.slide-container{
+		width: 100%
+	}
+	.slide{
+		height: calc(100% - 10px);
+		min-width: 232px;
+	}
 }

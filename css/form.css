@@ -1,0 +1,21 @@
+.container-form{
+	margin-top: 80px;
+	background: #FAFAFA;
+	border-radius: 1rem;
+	box-shadow: 2px 2px 14px rgba(0, 0, 0, 0.25);
+	padding: 20px;
+	max-width: 756px;
+}
+
+.show-alert{
+	animation: scale-up-hor-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) reverse both;
+}
+
+@keyframes scale-up-hor-center {
+  0% {
+            transform: scaleX(0);
+  }
+  100% {
+            transform: scaleX(1);
+  }
+}

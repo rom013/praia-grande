@@ -1,0 +1,126 @@
+.main-banner {
+	background: url("../assets/img/background_PG.png");
+	background-repeat: no-repeat;
+	min-height: 600px;
+	height: 90vh;
+	background-size: cover;
+	background-attachment: fixed;
+}
+/* https://www.figma.com/file/coGxK6umB0E4kOai925N77/Praia-Grande?node-id=68%3A83&t=LFWDioOauFgTMZq9-0 */
+.column-section {
+  display: grid;
+  grid-template-columns: 1fr 20px 1fr;
+  column-gap: 20px;
+}
+
+.timeline {
+  background: linear-gradient(180deg, #05C7F2 95.21%, rgba(5, 199, 242, 0) 100%);
+}
+
+.time {
+  background:linear-gradient(#05C7F2 95.21%, rgba(5, 199, 242, 0) 100%);
+}
+
+.fundo {
+  padding: 8px 64px;
+    font-size: 32px;
+    font-weight: 800;
+    border-radius: 0px 8px 8px 0px;
+    justify-content: center;
+  background: linear-gradient(90deg, #00AFD6 0%, #05C7F2 12.92%);
+}
+
+.fundo-left {
+  padding: 8px 64px;
+    font-size: 32px;
+    font-weight: 800;
+    border-radius: 8px 0px 0px 8px;;
+    justify-content: center;
+  background: linear-gradient(90deg, #05C7F2 85.83%, #00AFD6 100%);
+}
+.centro {
+  align-self: center;
+}
+
+.data-es{
+  display: flex;
+  justify-content: end;
+  transform: translateX(20px);
+  margin-bottom: 64px;
+}
+
+.data-dir{
+  display: flex;
+  transform: translateX(-20px);
+  margin-bottom: 64px;
+}
+
+.col1{
+  padding: 88px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 135px;
+}
+
+.galeria{
+  background-image: url("../assets/img/Rectangle35.png");
+  height: 840px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container-gallery{
+	overflow-y: auto;
+	overflow-x: hidden;
+    height: 600px;
+	margin-top: 24px
+}
+.container-gallery::-webkit-scrollbar{
+	width: 4px;
+}
+
+.container-gallery::-webkit-scrollbar-track {
+  background: transparent;        
+}
+
+.container-gallery::-webkit-scrollbar-thumb {
+  background-color: #545454;    
+  border-radius: 20px; 
+}
+
+.fotos {
+  background: #FFFFFF;
+  border-radius: 4px;
+  padding: 12px 12px 24px 12px;
+}
+.tesst{
+	transition: 1s
+}
+.tesst:nth-child(odd):hover{
+	transform: rotateX(15deg)
+}
+.tesst:nth-child(even):hover{
+	transform: rotate(1deg)
+}
+
+.main-banner h1 {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+
+@media only screen and (max-width: 768px){
+	.column-section {
+    	grid-template-columns: 1fr 20px
+	}
+	.col1{
+		gap: 80px
+	}
+	.data-es, .data-dir{
+		position: sticky;
+		top: 0
+	}
+	.time{
+		padding: 8px 64px;
+		font-size: 1.5rem
+	}
+}

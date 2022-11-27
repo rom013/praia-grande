@@ -32,7 +32,55 @@ function changeDataChart(id){
     else if(id == "DadosGeo"){
         let areaChart = document.querySelector("#areaChart")
         readTitle.textContent = "Mais Dados"
-        areaChart.textContent = ""
+		areaChart.textContent = ""
+        areaChart.insertAdjacentHTML("afterbegin", `
+			<div class="frame-table">
+				<table class="table table-striped table-blue">
+					<tbody>
+						<tr>
+							<td>Altitude</td>
+							<td>5 m</td>	
+						</tr>
+						<tr>
+							<td>Área</td>
+							<td>147 km²</td>	
+						</tr>
+						<tr>
+							<td>Bairros</td>
+							<td>32</td>	
+						</tr>
+						<tr>
+							<td>Clima</td>
+							<td>Subtropical Úmido</td>	
+						</tr>
+						<tr>
+							<td>Fuso horário</td>
+							<td>UTC-3 (Brasilia)</td>	
+						</tr>
+						<tr>
+							<td>Latitude</td>
+							<td>24° 00’ S</td>	
+						</tr>
+						<tr>
+							<td>Longitude</td>
+							<td>46° 00’W</td>	
+						</tr>
+						<tr>
+							<td>Pluviosidade</td>
+							<td>2000-2500mm a.a</td>	
+						</tr>
+						<tr>
+							<td>Relevo</td>
+							<td>58% Plano - 42% serras</td>	
+						</tr>
+						<tr>
+							<td>Temperatura média</td>
+							<td>Verão: 24° / Inverno: 17°</td>	
+						</tr>
+					</tbody>
+				</table>
+			</div>	
+  		`)
     }
 }
 

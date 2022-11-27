@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Praia Grande | Agendamento</title>
+
+	<!-- bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	<!-- google fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;700&display=swap" rel="stylesheet">
+
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/form.css">
+
+	<link rel="website icon" type="png" href="assets/img/brasao_colorido.png">
+
+	<script src="https://unpkg.com/imask"></script>
+</head>
+
+<body>
+	<header class="bg-blue-500 p-0 container-fluid">
+		<nav class="navbar navbar-expand-lg navbar-dark cabecalho px-5 py-3">
+			<div class="container">
+				<a href="/" title="Inicio">
+					<img src="assets/img/brasao_colorido.png" width="80" height="80" class="d-block d-sm-none">
+					<img src="assets/img/BRASÃO-PG-branco.png" height="80" class="d-sm-block d-none">
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+					area-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+					<ul class="navbar-nav">
+						<li class="nav-item">
+							<a href="historia.html" class="nav-link text-center">História</a>
+						</li>
+						<li class="nav-item">
+							<a href="turismo.html" class="nav-link text-center active">Turismo</a>
+						</li>
+						<li class="nav-item">
+							<a href="events.html" class="nav-link text-center ">Eventos</a>
+						</li>
+						<li class="nav-item">
+							<a href="datas.html" class="nav-link text-center">Dados e Características</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+	<main class="container">
+		<div class="row justify-content-center">
+			<div class="container-form">
+				<form class="row g-3">
+					<h4 class="col-12 text-center fw-bold">AGENDAR UMA VISITA TURÍSTICA</h4>
+					<hr>
+					<div class="col-12">
+						<label for="inputName" class="form-label">Nome completo <span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="inputName" autocomplete="true" required>
+					</div>
+					<div class="col-md-6">
+						<label for="inputDate" class="form-label">Data de nascimento <span
+								class="text-danger">*</span></label>
+						<input type="date" class="form-control" id="inputDate" required >
+					</div>
+					<div class="col-md-6">
+						<label for="inputEnder" class="form-label">Endereço <span class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="inputEnder" required autocomplete="true">
+					</div>
+					<div class="col-md-6">
+						<label for="inputCity" class="form-label">Cidade que reside <span
+								class="text-danger">*</span></label>
+						<input type="text" class="form-control" id="inputCity" required autocomplete="true">
+					</div>
+					<div class="col-md-6">
+						<label for="inputBairro" class="form-label">Bairro</label>
+						<input type="text" class="form-control" id="inputBairro" autocomplete="true">
+					</div>
+					<div class="col-md-6">
+						<label for="inputState" class="form-label">UF <span class="text-danger">*</span></label>
+						<select id="inputState" class="form-select" required>
+							<option value='' selected>...</option>
+							<option value="AC">Acre</option>
+							<option value="AL">Alagoas</option>
+							<option value="AP">Amapá</option>
+							<option value="AM">Amazonas</option>
+							<option value="BA">Bahia</option>
+							<option value="CE">Ceará</option>
+							<option value="DF">Distrito Federal</option>
+							<option value="ES">Espírito Santo</option>
+							<option value="GO">Goiás</option>
+							<option value="MA">Maranhão</option>
+							<option value="MT">Mato Grosso</option>
+							<option value="MS">Mato Grosso do Sul</option>
+							<option value="MG">Minas Gerais</option>
+							<option value="PA">Pará</option>
+							<option value="PB">Paraíba</option>
+							<option value="PR">Paraná</option>
+							<option value="PE">Pernambuco</option>
+							<option value="PI">Piauí</option>
+							<option value="RJ">Rio de Janeiro</option>
+							<option value="RN">Rio Grande do Norte</option>
+							<option value="RS">Rio Grande do Sul</option>
+							<option value="RO">Rondônia</option>
+							<option value="RR">Roraima</option>
+							<option value="SC">Santa Catarina</option>
+							<option value="SP">São Paulo</option>
+							<option value="SE">Sergipe</option>
+							<option value="TO">Tocantins</option>
+							<option value="EX">Estrangeiro</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label for="inputCel" class="form-label">Celular <span class="text-danger">*</span></label>
+						<input type="tel" class="form-control" id="inputCel" placeholder="(xx) xxxxx xxxx" required autocomplete="true">
+					</div>
+					<div class="col-md-6">
+						<label for="inputTur" class="form-label">Ponto turístico <span
+								class="text-danger">*</span></label>
+						<select id="inputTur" class="form-select" required>
+							<option value="" selected>...</option>
+							<option value="Fortaleza de Itaipu">Fortaleza de Itaipu</option>
+							<option value="Palácio das Artes">Palácio das Artes</option>
+						</select>
+					</div>
+					<div class="col-md-6">
+						<label for="dateVisit" class="form-label">Data da visita <span
+								class="text-danger">*</span></label>
+						<input type="date" class="form-control" id="dateVisit" required>
+					</div>
+					<div class="col-12">
+						<label for="observacao" class="form-label">Observações</label>
+						<textarea name="as" id="observacao" cols="30" rows="5" class="form-control"></textarea>
+					</div>
+
+					<div class="d-none" id="responsibleField">
+						<hr>
+						<p class="text-muted mb-4 small">Você não é maior de idade, complete os campos a baixo</p>
+						<div class="col-12 mt-3">
+							<label for="nameRes" class="form-label">Nome completo do responsável <span
+									class="text-danger">*</span></label>
+							<input type="text" class="form-control" id="nameRes" autocomplete="true">
+						</div>
+						<div class="col-md-6 mt-3">
+							<label for="dateRes" class="form-label">Data de nascimento do responsável <span
+									class="text-danger">*</span></label>
+							<input type="date" class="form-control" id="dateRes">
+						</div>
+						<hr>
+					</div>
+
+					<div class="col-12 justify-content-center d-flex">
+						<button type="submit" class="btn bg-green-300 font-weight-bold w-25" id="schedule"
+							onclick="validationInputs()" data-bs-toggle="modal" data-bs-target="#exampleModal">AGENDAR</button>
+					</div>
+
+				</form>
+			</div>
+		</div>
+	</main>
+
+	
+	<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header justify-content-center">
+					<h1 class="align-items-center d-flex flex-column-reverse fs-5 modal-title text-danger" id="exampleModalLabel">Opss!
+						<lord-icon src="https://cdn.lordicon.com/bmnlikjh.json" 
+							trigger="loop" 
+							colors="primary:#e83a30"
+							style="width:32px;height:32px"
+							class="mx-4"
+							delay="1000"
+							>
+						</lord-icon>
+					</h1>
+					<button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" style="right: 32px;"></button>
+				</div>
+				<div class="modal-body">
+					Preencha todos os campos em destaque.
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer class="position-relative row row-cols-1 row-cols-sm-2 row-cols-md-5 border-top w-100 mx-0 py-5" style="margin-top: 8rem">
+		<div class="mx-auto w-75">
+			<div class="row justify-content-between m-0">
+				<div class="col-md-2 mb-3 p-0 d-flex flex-column align-items-center">
+
+					<a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+						<img src="assets/img/brasao.png" alt="">
+					</a>
+
+					<div class="d-flex flex-column">
+						<span class="text-center small mb-1">
+							Avenida Presidente Kennedy, 9000, Bairro Mirim
+						</span>
+						<span class="text-center small mb-1">
+							segunda a sexta-feira <br>das 9h às 16h
+						</span>
+						<span class="text-center small mb-1">
+							(13) 3496-2000
+						</span>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="d-flex justify-content-between">
+						<a href="https://ouvidoria.etransparencia.com.br/praiagrande.sp/wpstartpagenew.aspx"
+							class="font-weight-bold text-decoration-none text-light">Ouvidoria</a>
+						<a href="https://transparencia.praiagrande.sp.gov.br/TDAPortalClient.aspx?417"
+							class="font-weight-bold text-decoration-none text-light">Transparência</a>
+						<a href="#" class="font-weight-bold text-decoration-none text-light">Telefones Úteis</a>
+						<a href="https://www.praiagrande.sp.gov.br/HomePortal-.asp?cd_pagina=71"
+							class="font-weight-bold text-decoration-none text-light">Prefeitura de Praia Grande</a>
+					</div>
+					<div class="row row-nowrap flex-column mt-5">
+						<span class="h6 font-weight-bold">Redes Sociais</span>
+						<div class="mt-1">
+							<a href="https://www.tiktok.com/@prefeiturapg" target="_blank"
+								class="text-light font-size-8 text-decoration-none">
+								<i class="bi bi-tiktok"></i>
+							</a>
+							<a href="https://www.facebook.com/prefeiturapg" target="_blank"
+								class="text-light font-size-8 text-decoration-none">
+								<i class="bi bi-facebook"></i>
+							</a>
+							<a href="https://www.youtube.com/@prefeiturapg" target="_blank"
+								class="text-light font-size-8 text-decoration-none">
+								<i class="bi bi-youtube"></i>
+							</a>
+							<a href="https://twitter.com/prefPG" target="_blank"
+								class="text-light font-size-8 text-decoration-none">
+								<i class="bi bi-twitter"></i>
+							</a>
+							<a href="https://www.instagram.com/prefeitura_pg" target="_blank"
+								class="text-light font-size-8 text-decoration-none">
+								<i class="bi bi-instagram"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- viewBox="0 0 2271 50" -->
+		<svg width="100%" height="96" fill="none" xmlns="http://www.w3.org/2000/svg" class="position-absolute onda p-0 w-100">
+			<path
+				d="M771.623 11.0935C480.835 -28.463 136.046 47.2204 0 90.0066V96H2271V24.0792C2268.65 18.7517 2244.68 14.1901 2167.59 38.5632C2090.51 62.9364 1858.16 83.0143 1751.62 90.0066C1543.25 101.494 1062.41 50.6499 771.623 11.0935Z"
+				fill="#05C7F2" />
+		</svg>
+	</footer>
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+		crossorigin="anonymous"></script>
+	<script script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js"
+		integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+		integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+		crossorigin="anonymous"></script>
+
+		
+	<script src="js/scriptForm.js"></script>
+
+
+</body>
+
+</html>

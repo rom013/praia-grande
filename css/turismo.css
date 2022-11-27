@@ -1,0 +1,58 @@
+.main-banner {
+	background: url("../assets/img/tour.png");
+	background-repeat: no-repeat;
+	min-height: 600px;
+	height: 90vh;
+	background-size: cover;
+	background-attachment: fixed;
+}
+.main-banner h1 {
+  font-size: 100px;
+  font-weight: bold;
+}
+.bola {
+  width: 112px;
+  height: 112px;
+  background: linear-gradient(180deg, #05C7F2 33.23%, #006075 100%);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main p{
+  font-size:12px;
+}
+
+.btn{
+  width: 144px;
+  height: 39px;
+  color: #000000 !important;
+/*   background: #07F9A0; */
+  border-radius: 12px;
+	background: linear-gradient(0deg, #07F9A0 0%, #07F9A0 100%);
+}
+
+main a:hover{
+	color: #000000 !important;
+	background: linear-gradient(0deg, #05C7F2 -60.36%, #07F9A0 100%);
+}
+.container-2{
+  	display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.line-division{
+	width: 100%;
+	background: #05C7F2;
+	height: 2px;
+	display: block;
+	margin: 32px 0;
+}
+
+.border-hotel{
+	border: #CED4DA 1px solid;
+	border-radius: 8px 8px 0 0;
+}
