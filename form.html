@@ -66,21 +66,21 @@
 					<div class="col-12">
 						<label for="inputName" class="form-label">Nome completo <span
 								class="text-danger">*</span></label>
-						<input type="text" class="form-control" id="inputName" autocomplete="true" required>
+						<input type="text" class="form-control required" id="inputName" autocomplete="true">
 					</div>
 					<div class="col-md-6">
 						<label for="inputDate" class="form-label">Data de nascimento <span
 								class="text-danger">*</span></label>
-						<input type="date" class="form-control" id="inputDate" required >
+						<input type="date" class="form-control required" id="inputDate" onblur="dateValidation()">
 					</div>
 					<div class="col-md-6">
 						<label for="inputEnder" class="form-label">Endereço <span class="text-danger">*</span></label>
-						<input type="text" class="form-control" id="inputEnder" required autocomplete="true">
+						<input type="text" class="form-control required" id="inputEnder" autocomplete="true">
 					</div>
 					<div class="col-md-6">
 						<label for="inputCity" class="form-label">Cidade que reside <span
 								class="text-danger">*</span></label>
-						<input type="text" class="form-control" id="inputCity" required autocomplete="true">
+						<input type="text" class="form-control required" id="inputCity" autocomplete="true">
 					</div>
 					<div class="col-md-6">
 						<label for="inputBairro" class="form-label">Bairro</label>
@@ -88,7 +88,7 @@
 					</div>
 					<div class="col-md-6">
 						<label for="inputState" class="form-label">UF <span class="text-danger">*</span></label>
-						<select id="inputState" class="form-select" required>
+						<select id="inputState" class="form-select required">
 							<option value='' selected>...</option>
 							<option value="AC">Acre</option>
 							<option value="AL">Alagoas</option>
@@ -122,42 +122,43 @@
 					</div>
 					<div class="col-md-6">
 						<label for="inputCel" class="form-label">Celular <span class="text-danger">*</span></label>
-						<input type="tel" class="form-control" id="inputCel" placeholder="(xx) xxxxx xxxx" required autocomplete="true">
+						<input type="tel" class="form-control required" id="inputCel" placeholder="(xx) xxxxx xxxx" autocomplete="true">
 					</div>
 					<div class="col-md-6">
 						<label for="inputTur" class="form-label">Ponto turístico <span
 								class="text-danger">*</span></label>
-						<select id="inputTur" class="form-select" required>
+						<select id="inputTur" class="form-select required ">
 							<option value="" selected>...</option>
 							<option value="Fortaleza de Itaipu">Fortaleza de Itaipu</option>
 							<option value="Palácio das Artes">Palácio das Artes</option>
+							<option value="Palácio das Artes">Portinho - Quiosques</option>
 						</select>
 					</div>
 					<div class="col-md-6">
 						<label for="dateVisit" class="form-label">Data da visita <span
 								class="text-danger">*</span></label>
-						<input type="date" class="form-control" id="dateVisit" required>
+						<input type="date" class="form-control required" id="dateVisit">
 					</div>
-					<div class="col-12">
+					<div class="col-12" >
 						<label for="observacao" class="form-label">Observações</label>
 						<textarea name="as" id="observacao" cols="30" rows="5" class="form-control"></textarea>
 					</div>
 
-					<div class="d-none" id="responsibleField">
-						<hr>
+					 <div class="" id="responsibleField">
+						<!--<hr>
 						<p class="text-muted mb-4 small">Você não é maior de idade, complete os campos a baixo</p>
 						<div class="col-12 mt-3">
 							<label for="nameRes" class="form-label">Nome completo do responsável <span
 									class="text-danger">*</span></label>
-							<input type="text" class="form-control" id="nameRes" autocomplete="true">
+							<input type="text" class="form-control required" id="nameRes" autocomplete="true">
 						</div>
 						<div class="col-md-6 mt-3">
 							<label for="dateRes" class="form-label">Data de nascimento do responsável <span
 									class="text-danger">*</span></label>
-							<input type="date" class="form-control" id="dateRes">
+							<input type="date" class="form-control required" id="dateRes">
 						</div>
-						<hr>
-					</div>
+						<hr>-->
+					</div> 
 
 					<div class="col-12 justify-content-center d-flex">
 						<button type="submit" class="btn bg-green-300 font-weight-bold w-25" id="schedule"

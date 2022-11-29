@@ -1,58 +1,60 @@
 document.querySelector("form").addEventListener("submit", (e)=>{
     e.preventDefault()
-    openModal(true)
 })
 
-const inputDateUser = document.querySelector("#inputDate")
-inputDateUser.addEventListener("blur", ()=>{
-    calculateAge(inputDateUser)
-})
-
-function openModal(a){
+function openModal(){
     const $inputBairro = document.querySelector("#inputBairro")
     const $observacao = document.querySelector("#observacao")
-    const valuesInputs = readInput()   
-
+    const $fullName = document.querySelector("#inputName")
+    const $inputDate = document.querySelector("#inputDate")
+    const $inputEnder = document.querySelector("#inputEnder")
+    const $inputCity = document.querySelector("#inputCity")
+    const $inputState = document.querySelector("#inputState")
+    const $cel = document.querySelector("#inputCel")
+    const $inputTur = document.querySelector("#inputTur")
+    const $dateVisit = document.querySelector("#dateVisit")
+    const $dateRes = document.querySelector("#dateRes")
+    const $nameRes = document.querySelector("#nameRes")
+    
+    
     const x = document.querySelector("#exampleModal")
     x.innerHTML = ""
-    if(a){
-        x.insertAdjacentHTML("afterbegin", `
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <ul class="list-group list-group-flush" id="listModal">
-                            <li class="list-group-item">Nome completo: ${valuesInputs.$fullName.value}</li>
-                            <li class="list-group-item">Data de nascimento: ${valuesInputs.$inputDate.value}</li>
-                            <li class="list-group-item">Endereço: ${valuesInputs.$inputEnder.value}</li>
-                            <li class="list-group-item">Cidade que reside: ${valuesInputs.$inputCity.value}</li>
-                            <li class="list-group-item">Bairro: ${$inputBairro.value}</li>
-                            <li class="list-group-item">UF: ${valuesInputs.$inputState.value}</li>
-                            <li class="list-group-item">Celular: ${valuesInputs.$cel.value}</li>
-                            <li class="list-group-item">Ponto turístico: ${valuesInputs.$inputTur.value}</li>
-                            <li class="list-group-item">Data visita: ${valuesInputs.$dateVisit.value}</li>
-                            <li class="list-group-item">Observação: ${$observacao.value}</li>
-                        </ul>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Corrigir</button>
-                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick="sendData()">Agendar</button>
-                    </div>
+    x.insertAdjacentHTML("afterbegin", `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <ul class="list-group list-group-flush" id="listModal">
+                        <li class="list-group-item">Nome completo: ${$fullName.value}</li>
+                        <li class="list-group-item">Data de nascimento: ${$inputDate.value}</li>
+                        <li class="list-group-item">Endereço: ${$inputEnder.value}</li>
+                        <li class="list-group-item">Cidade que reside: ${$inputCity.value}</li>
+                        <li class="list-group-item">Bairro: ${$inputBairro.value}</li>
+                        <li class="list-group-item">UF: ${$inputState.value}</li>
+                        <li class="list-group-item">Celular: ${$cel.value}</li>
+                        <li class="list-group-item">Ponto turístico: ${$inputTur.value}</li>
+                        <li class="list-group-item">Data visita: ${$dateVisit.value}</li>
+                        <li class="list-group-item">Observação: ${$observacao.value}</li>
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Corrigir</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal" onClick="sendData()">Agendar</button>
                 </div>
             </div>
+        </div>
+    `)
+    if($nameRes != null && $dateRes != null){
+        document.querySelector("#listModal").insertAdjacentHTML("beforeend", `
+            <li class="list-group-item">Nome completo do responsável: ${$nameRes.value}</li>
+            <li class="list-group-item">Data de nascimento do responsável: ${$dateRes.value}</li>
         `)
-        if(valuesInputs.$nameRes != ''){
-            document.querySelector('#listModal').insertAdjacentHTML("beforeend", `
-                <li class="list-group-item">Nome completo do responsavel: ${valuesInputs.$nameRes.value}</li>
-                <li class="list-group-item">Data de nascimento do responsavel: ${valuesInputs.$dateRes.value}</li>
-            `)
-        }
-
     }
 }
 function sendData(){
+    const campos = [...document.querySelectorAll(".required")]
     const $inputBairro = document.querySelector("#inputBairro")
     const $observacao = document.querySelector("#observacao")
 
@@ -77,106 +79,116 @@ function sendData(){
             window.location.reload()
         }, 6000)
     }, 10000)
-    let valuesInputs = readInput()
-    for(let i in valuesInputs){
-        valuesInputs[i].disabled = true
+
+    for(let i in campos){
+        campos[i].disabled = true
     }
     $inputBairro.disabled = true
     $observacao.disabled = true
 }
+
+let countError = 0
+
 function validationInputs(){
-    let values = readInput()
-    
-    for(let i in values){
-        if(values[i].value == '' || values[i].value == null || values[i].value == undefined){
-            values[i].classList.add("is-invalid")
+    const y = document.querySelector("#exampleModal")
+    y.innerHTML = ""
+    y.insertAdjacentHTML("afterbegin", `
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header justify-content-center">
+                    <h1 class="align-items-center d-flex flex-column-reverse fs-5 modal-title text-danger" id="exampleModalLabel">Opss!
+                        <lord-icon src="https://cdn.lordicon.com/bmnlikjh.json" 
+                            trigger="loop" 
+                            colors="primary:#e83a30"
+                            style="width:32px;height:32px"
+                            class="mx-4"
+                            delay="1000"
+                            >
+                        </lord-icon>
+                    </h1>
+                    <button type="button" class="btn-close position-absolute" data-bs-dismiss="modal" aria-label="Close" style="right: 32px;"></button>
+                </div>
+                <div class="modal-body">
+                    Preencha todos os campos em destaque.
+                </div>
+            </div>
+        </div>
+    `)
+
+    const campos = [...document.querySelectorAll(".required")]
+    countError = 0
+
+    validationCel()
+
+    for(let i in campos){
+        if(campos[i].value == '' || campos[i].value == undefined || campos[i].value == null || campos[i].value.length < 2){
+            campos[i].classList.add('is-invalid')
         }
+        
         else{
-            values[i].classList.remove("is-invalid")
+            campos[i].classList.remove('is-invalid')
+        }
+
+        if(campos[i].classList[2] == 'is-invalid'){
+            countError++
         }
     }
-
-
-    let returnDateValidation = validDateBirth(values.$inputDate)
-
-    if(returnDateValidation == '' || !returnDateValidation){
-        values.$inputDate.classList.add("is-invalid")
-        console.log("dad");
-    }
-    else{
-        console.log("daaw");
-        values.$inputDate.classList.remove("is-invalid")
-    }
-    if(values.$cel.value.length-5 <= 10){
-        values.$cel.classList.add("is-invalid")
-        values.$cel.value = ""
-    }
-    else{
-        values.$cel.classList.remove("is-invalid")
+    
+    console.log(countError);
+    if(countError == 0){
+        console.log("eeeh");
+        openModal()
     }
 }
 
-function validDateBirth(a){
-    let dateUser = parseInt(a.value.substr(0,4))
-    let newDate = new Date().getFullYear()
-
-    if(dateUser < (newDate - 100) || dateUser > newDate || a.value == ''){
-        return false
-    }
-    else {
-        return true
-    }
-}
-function validDateVisit(dateVisit){
-    const yearVisitChosen = parseInt(dateVisit.value.substr(0,4))
-    const dayVisitChosen = parseInt(dateVisit.value.substr(8,9))
-    const monthVisitChosen = parseInt(dateVisit.value.substr(5,6))
+function dateValidation(){
+    const campos = [...document.querySelectorAll(".required")]
+    
+    const yearUser = parseInt(campos[1].value.substr(0,4))
+    const dayUser = parseInt(campos[1].value.substr(8,9))
+    const monthUser = parseInt(campos[1].value.substr(5,6))
     const newDateDay = new Date().getDate()
     const newDateYear = new Date().getFullYear()
     const newDateMonth = new Date().getMonth() + 1
 
-    if(yearVisitChosen < newDateYear || monthVisitChosen < newDateMonth || (dayVisitChosen < newDateDay && monthVisitChosen <= newDateMonth)){
-        dateVisit.classList.add("is-invalid")
-    }  
-    if(yearVisitChosen > newDateYear){
-        dateVisit.classList.remove("is-invalid")   
-    }
-}
-
-function readInput(){
-    return {
-        $fullName : document.querySelector("#inputName"),
-        $inputDate : document.querySelector("#inputDate"),
-        $inputEnder : document.querySelector("#inputEnder"),
-        $inputCity : document.querySelector("#inputCity"),
-        $inputState : document.querySelector("#inputState"),
-        $cel : document.querySelector("#inputCel"),
-        $inputTur : document.querySelector("#inputTur"),
-        $dateVisit : document.querySelector("#dateVisit"),
-        $dateRes : document.querySelector("#dateRes"),
-        $nameRes : document.querySelector("#nameRes"),
-    }
-}
-
-function calculateAge(date){
-    const responsibleField = document.querySelector("#responsibleField")
-    const $dateRes = document.querySelector("#dateRes")
-    const $nameRes = document.querySelector("#nameRes")
-    const dateUser = parseInt(date.value.substr(0,4))
-    const newDate = new Date().getFullYear()
-    const age = newDate - dateUser
-
-    if(validDateBirth(date)){
-        if(age < 18){
-            responsibleField.classList.remove('d-none')
-            $dateRes.setAttribute("required", true)
-            $nameRes.setAttribute("required", true)
+    if(yearUser <= newDateYear && yearUser > (newDateYear - 100)){
+        campos[1].classList.remove("is-invalid")
+        const age = newDateYear - yearUser
+    
+        if(newDateMonth <= monthUser){
+            if(newDateDay < dayUser){
+                age--
+                if(age < 18){
+                    activeResponsibleField(true)
+                }  
+                else{
+                    activeResponsibleField(false)
+                }
+            }
         }
         else{
-            responsibleField.classList.add('d-none')
-            $dateRes.removeAttribute('required')
-            $nameRes.removeAttribute('required')
+            if(age < 18){
+                activeResponsibleField(true)
+            }  
+            else{
+                activeResponsibleField(false)
+            }
         }
+    }
+    else{
+        campos[1].classList.add("is-invalid")
+        campos[1].value = ""
+    }
+}
+
+function validationCel(){
+    let $cel = document.querySelector("#inputCel")
+    if($cel.value.length-5 <= 10){
+        $cel.classList.add("is-invalid")
+        $cel.value = ""
+    }
+    else{
+        $cel.classList.remove("is-invalid")
     }
 }
 
@@ -185,5 +197,43 @@ var cel = document.querySelector("#inputCel")
 var maska = {
     mask : "(00) 0 0000 0000"
 }
-
 IMask(cel , maska)
+
+
+function activeResponsibleField(age){
+    const responsibleForm = document.querySelector("#responsibleField")
+    if(age){
+        responsibleForm.innerHTML = ""
+        responsibleForm.insertAdjacentHTML("afterbegin", `
+            <hr>
+            <p class="text-muted mb-4 small">Você não é maior de idade, complete os campos a baixo</p>
+            <div class="col-12 mt-3">
+                <label for="nameRes" class="form-label">Nome completo do responsável <span
+                        class="text-danger">*</span></label>
+                <input type="text" class="form-control required" id="nameRes" autocomplete="true">
+            </div>
+            <div class="col-md-6 mt-3">
+                <label for="dateRes" class="form-label">Data de nascimento do responsável <span
+                        class="text-danger">*</span></label>
+                <input type="date" class="form-control required" id="dateRes" onblur="validationDateResponsible()">
+            </div>
+            <hr>
+        `)
+    }
+    else{
+        responsibleForm.innerHTML = ""
+    }
+}
+
+function validationDateResponsible(){
+    let dateRes = document.querySelector("#dateRes")
+    let yearRes = parseInt(dateRes.value.substr(0,4))
+    let newDate = new Date().getFullYear()
+    
+    if(yearRes > (newDate - 18) || yearRes < (newDate - 100)){
+        dateRes.classList.add("is-invalid")
+    }
+    else{
+        dateRes.classList.remove("is-invalid")
+    }
+}

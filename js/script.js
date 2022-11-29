@@ -124,3 +124,31 @@ btns.forEach((e) => {
     })
 })
 //end slide eventos
+
+
+function shearch(){
+	const textBtn = document.querySelector(".bus")
+	const loading = document.querySelector("#load")
+	const valueInput = document.querySelector(".inputPesquisa")
+	
+	textBtn.textContent = ""
+	loading.classList.add("spinner")
+	setTimeout(()=>{
+		if(valueInput.value == "O que tem em Praia Grande?" || valueInput.value == "o que tem em praia grande?"){
+			window.location.href = "turismo.html"
+		}
+		if(valueInput.value == "Dados e Características" || valueInput.value == "dados e caracteristicas"){
+			window.location.href = "datas.html"
+		}
+		if(valueInput.value == "historia" || valueInput.value == "História" || valueInput.value == "história"){
+			window.location.href = "historia.html"
+		}
+		if(valueInput.value == "Agendar" || valueInput.value == "Agendamento" || valueInput.value == "agendar" || valueInput.value == "agendamento"){
+			window.location.href = "form.html"
+		}
+		else{
+			loading.classList.remove("spinner")
+			textBtn.textContent = "BUSCAR"
+		}
+	}, 2500)
+}
