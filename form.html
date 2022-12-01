@@ -137,7 +137,8 @@
 					<div class="col-md-6">
 						<label for="dateVisit" class="form-label">Data da visita <span
 								class="text-danger">*</span></label>
-						<input type="date" class="form-control required" id="dateVisit">
+						<input type="date" class="form-control required" id="dateVisit" onblur="validationDateVisit()" min="">
+						<span class="text-danger small" id="errorMensageVisit"></span>
 					</div>
 					<div class="col-12" >
 						<label for="observacao" class="form-label">Observações</label>

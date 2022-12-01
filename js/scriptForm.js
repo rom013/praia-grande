@@ -2,6 +2,11 @@ document.querySelector("form").addEventListener("submit", (e)=>{
     e.preventDefault()
 })
 
+
+const newDay = new Date().getDate()
+const newMonth = new Date().getMonth() + 1
+const newYear = new Date().getFullYear()
+
 function openModal(){
     const $inputBairro = document.querySelector("#inputBairro")
     const $observacao = document.querySelector("#observacao")
@@ -57,6 +62,7 @@ function sendData(){
     const campos = [...document.querySelectorAll(".required")]
     const $inputBairro = document.querySelector("#inputBairro")
     const $observacao = document.querySelector("#observacao")
+    const $btn = document.querySelector("#schedule")
 
     document.body.insertAdjacentHTML("afterbegin", `
         <div class="w-100 position-fixed bottom-0 d-flex justify-content-center" style="z-index: 999999" id="successAlert">
@@ -77,7 +83,7 @@ function sendData(){
         document.querySelector("#successAlert").classList.add("show-alert")
         setTimeout(()=>{
             window.location.reload()
-        }, 6000)
+        }, 2000)
     }, 10000)
 
     for(let i in campos){
@@ -85,6 +91,7 @@ function sendData(){
     }
     $inputBairro.disabled = true
     $observacao.disabled = true
+    $btn.disabled = true
 }
 
 let countError = 0
@@ -134,9 +141,7 @@ function validationInputs(){
         }
     }
     
-    console.log(countError);
     if(countError == 0){
-        console.log("eeeh");
         openModal()
     }
 }
@@ -147,16 +152,13 @@ function dateValidation(){
     const yearUser = parseInt(campos[1].value.substr(0,4))
     const dayUser = parseInt(campos[1].value.substr(8,9))
     const monthUser = parseInt(campos[1].value.substr(5,6))
-    const newDateDay = new Date().getDate()
-    const newDateYear = new Date().getFullYear()
-    const newDateMonth = new Date().getMonth() + 1
 
-    if(yearUser <= newDateYear && yearUser > (newDateYear - 100)){
+    if(yearUser <= newYear && yearUser > (newYear - 100)){
         campos[1].classList.remove("is-invalid")
-        const age = newDateYear - yearUser
+        let age = newYear - yearUser
     
-        if(newDateMonth <= monthUser){
-            if(newDateDay < dayUser){
+        if(newMonth <= monthUser){
+            if(newDay < dayUser){
                 age--
                 if(age < 18){
                     activeResponsibleField(true)
@@ -232,8 +234,54 @@ function validationDateResponsible(){
     
     if(yearRes > (newDate - 18) || yearRes < (newDate - 100)){
         dateRes.classList.add("is-invalid")
+        dateRes.value = ""
     }
     else{
         dateRes.classList.remove("is-invalid")
+    }
+}
+
+let newDateLocal = new Date()  // data local
+newDateLocal.setDate(newDateLocal.getDate()+1) // add +1 dia ao dia local
+newDateLocal = newDateLocal.toISOString().split("T")[0] // converte newDateLocal para o formato ISO (YYYY-MM-DDTHH:mm:ss.sssZ) e apaga todos os valores após a letra "T" sobrando apenas "YYYY-MM-DD" em formato de string
+document.querySelector("#dateVisit").setAttribute("min", newDateLocal) // add atributo min ao #dateVisit
+
+function validationDateVisit(){
+    const date = document.querySelector("#dateVisit")
+    const mensageErrorVisit = document.querySelector("#errorMensageVisit")
+    const year = parseInt(date.value.substr(0,4))
+    const month = parseInt(date.value.substr(5,2))
+    const day = parseInt(date.value.substr(8,2))
+    
+    if(year == newYear){
+        if(month > newMonth){
+            date.classList.remove("is-invalid")
+            mensageErrorVisit.textContent = ""
+        }
+        else if(month == newMonth){
+            if(day > newDay){
+                date.classList.remove("is-invalid")
+                mensageErrorVisit.textContent = ""
+            }
+            else{
+                date.classList.add("is-invalid")
+                date.value = ""
+                mensageErrorVisit.textContent = "Erro: o dia escolhido deve ser maior que o dia atual"
+            }
+        }
+        else{
+            date.classList.add("is-invalid")
+            date.value = ""
+            mensageErrorVisit.textContent = "Erro: o dia escolhido deve ser maior que o dia atual"
+        }
+    }
+    else if(year > newYear){
+        date.classList.remove("is-invalid")
+        mensageErrorVisit.textContent = ""
+    }
+    else{
+        date.classList.add("is-invalid")
+        date.value = ""
+        mensageErrorVisit.textContent = "Erro: o dia escolhido deve ser maior que o dia atual"
     }
 }

@@ -39,9 +39,9 @@ main a:hover{
 }
 .container-2{
   	display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 20px;
+/*     align-items: flex-start;
+    justify-content: center; */
+    gap: 60px;
 }
 
 .line-division{
