@@ -43,5 +43,5 @@ Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figm
 #
 
 <p align="center">
-  Feito com ❤ por @rom013 @koleRosa
+  done with ❤ by @rom013 and @koleRosa
 </p>
